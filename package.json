@@ -1,13 +1,16 @@
 {
-  "name": "p-patel-favorite-perfumes",
-  "version": "0.0.0",
+  "name": "p-patel-favoriteperfumes",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:P_Patel_FavoritePerfumes": "node dist/p-patel-favorite-perfumes/server/server.mjs"
+    "serve:ssr:P_Patel_FavoritePerfumes": "node dist/p-patel-favorite-perfumes/server/server.mjs",
+    "generatecomponent": "ng generate component",
+    "generatepipe": "ng generate pipe",
+    "generatedirective": "ng generate directive"
   },
   "private": true,
   "dependencies": {
