@@ -1,65 +1,44 @@
-export interface Content {
-  id?: number;
-  title: string;
-  description: string;
-  creator: string;
-  imgURL?: string;
-  type?: string;
-}
+import {Content} from './content-interface';
 
 export class ContentList {
-  private contentArray: Content[] = [];
+    private _items: Content[] = [];
 
-  constructor() {
-    // Array is set to be empty
-    this.contentArray = [];
-  }
-
-  // Getter function to returns the Content array
-  getItems(): Content[] {
-    return this.contentArray;
-  }
-
-  // function that adds 1 Content item to the end of the array
-  add(item: Content): void {
-    this.contentArray.push(item);
-  }
-
-  // Function that returns the number of items in the array
-  getItemCount(): number {
-    return this.contentArray.length;
-  }
-
-  // Function that returns a reader-friendly HTML output of a Content item's properties at a given index
-  getHtmlOutput(index: number): string {
-    if (index < 0 || index >= this.contentArray.length) {
-      // Bonus: Return an HTML error message for an invalid index
-      return '<p>Error: Index out of range</p>';
+    constructor() {
+        this._items = [];
     }
 
-    const contentItem = this.contentArray[index];
+    get content(): Content[] {
+        return this._items;
+    }
 
-    // Generate an image tag if imgURL is provided
-    const imgTag = contentItem.imgURL ? `<img src="${contentItem.imgURL}" alt="${contentItem.title}">` : '';
+    public addContent(Content: Content): void {
+        this._items.push(Content);
+    }
 
-    // Generate reader-friendly HTML output
-    const htmlOutput = `
-      <div>
-        <h3>${contentItem.title}</h3>
-        <p>${contentItem.description}</p>
-        <p>Creator: ${contentItem.creator}</p>
-        ${imgTag}
-        <p>Type: ${contentItem.type}</p>
-      </div>
-    `;
+    public getNumberOfItem(): number {
+        return this._items.length;
+    }
 
-    return htmlOutput;
-  }
+    public getContent(index: number): string {
+        const contentItem = this._items[index];
+        var numOfItems = this.getNumberOfItem();
+        if(index < 0 || index > numOfItems) {
+            const errMsg = '<p style="color: red">Invalid Index</p>';
 
+            return `<div> ${errMsg} </div>`;
+        }
+        else {
 
-  // Added function for BONUS that shows a error message if it is out of range
-  displayItem(index: number): void {
-    const output = this.getHtmlOutput(index);
-    console.log(output);
-  }
+            var title = contentItem.title;
+            var description = contentItem.description;
+            var imgURL = contentItem.imgURL;
+            var creator = contentItem.creator;
+            var type = contentItem.type;
+            var tags = contentItem.tags;
+            var imgTag = imgURL ? `<img src="${imgURL}" alt="${title}">` : '';
+
+            return `<div> <h3>${title}</h3> <p>${description}</p> <p>Creator: ${creator}</p> ${imgTag} <p>Type: ${type}</p> <p> Tags: ${tags} </p> </div><hr/>`;
+
+        }
+    }
 }
