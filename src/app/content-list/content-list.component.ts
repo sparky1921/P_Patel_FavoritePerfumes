@@ -29,7 +29,7 @@ export class ContentListComponent {
         title: 'Sauvage Eau de Parfum',
         description: 'A radically fresh composition, with a powerful name that speaks for itself. That was the way François Demachy, Dior Perfumer-Creator, wanted it: raw and noble all at once.',
         creator: 'DIOR',
-        imgURL: 'https://www.dior.com/beauty/version-5.1559207191024/assets/fragrance/desktop/christian-dior-fragrance-fragrance-mens-fragrance-sauvage-dior-sauvage-eau-de-parfum-square.jpg',
+        imgURL: 'https://perfumeboss.ca/wp-content/uploads/2018/12/sauvage-edp-m-e1544122357711.jpg',
         type: 'Woody',
         tags: ['Classic', 'Masculine']
       },
@@ -38,7 +38,7 @@ export class ContentListComponent {
         title: 'Coco Mademoiselle',
         description: 'Sexy, fresh Oriental fragrance recalls the irrepressible spirit of the young Coco Chanel. An elegant, luxurious spray closest in strength and character to the parfum form.',
         creator: 'CHANEL',
-        imgURL: 'https://cdn.shopify.com/s/files/1/0022/6546/3114/products/COCOMADEMOISELLE3_800x.jpg?v=1606356551',
+        imgURL: 'https://i.ebayimg.com/images/g/XFAAAOSwwkhgNAAe/s-l1200.webp',
         type: 'Oriental',
         tags: ['Feminine', 'Classic']
       },
@@ -47,7 +47,7 @@ export class ContentListComponent {
         title: 'Acqua Di Gioia',
         description: 'Acqua di Gioia represents the joy of the Mediterranean Sea. This refreshing aquatic fragrance opens with a beautiful blend of fresh jasmine and zesty lemon.',
         creator: 'GIORGIO ARMANI',
-        imgURL: 'https://cdn11.bigcommerce.com/s-5vposnr3y6/images/stencil/1280x1280/products/19255/23209/768614123450__15412.1587591563.jpg?c=2',
+        imgURL: 'https://m.media-amazon.com/images/I/51L51-6qoTL.jpg',
         type: 'Aquatic',
         tags: ['Fresh', 'Youthful']
       },
@@ -56,7 +56,7 @@ export class ContentListComponent {
         title: 'Black Opium',
         description: 'Black Opium is an irresistible gourmand floral fragrance that embodies the spirit of Yves Saint Laurent. Notes of black coffee for a shot of adrenaline, white florals to instantly seduce, and vanilla for sweetness and sensuality.',
         creator: 'YVES SAINT LAURENT',
-        imgURL: 'https://www.yslbeautyus.com/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-itemmaster_ysl/default/dw3158f39c/Black-Opium-EDP-Spray-Perfume-Yves-Saint-Laurent--60mL-3614270570126.jpg?sw=600&sh=600&sm=fit&q=70',
+        imgURL: 'https://perfumeboss.ca/wp-content/uploads/2017/08/Yves-Saint-Laurent-Black-Opium-Eau-de-Parfum-50ml.jpg',
         type: 'Gourmand',
         tags: ['Sensual', 'Modern']
       },
@@ -65,7 +65,7 @@ export class ContentListComponent {
         title: 'N°5 Eau de Parfum',
         description: 'The now and forever fragrance. The ultimate in femininity. An elegant, luxurious spray closest in strength and character to the parfum form.',
         creator: 'CHANEL',
-        imgURL: 'https://cdn.shopify.com/s/files/1/0022/6546/3114/products/CHANEL_NO5_800x.jpg?v=1606356499',
+        imgURL: 'https://i.ebayimg.com/images/g/640AAOSwyc9jJeMh/s-l1200.webp',
         type: 'Floral',
         tags: ['Classic', 'Feminine']
       },
