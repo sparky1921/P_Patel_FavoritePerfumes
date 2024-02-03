@@ -1,8 +1,34 @@
-<div>
+<div class="card">
+  <h1>{{content.title}}</h1>
+
+  <div *ngIf="content.imgURL">
+    <strong>Image:</strong>
+    <img src="{{content.imgURL}}" width="200" height="200" (click)="handleClick(content)" alt="{{content.title}}" />
+  </div>
+
+
   <div>
-      @for(content of contentList.content; track content.id; let i = $index){
-          <div [innerHTML]="contentList.getContent(i)">
-          </div>
-      }
+    <strong>Description:</strong>
+    {{content.description}}
+  </div>
+
+  <div>
+    <strong>Creator:</strong>
+    {{content.creator}}
+  </div>
+
+  <div *ngIf="content.type">
+    <strong>Type:</strong>
+    {{content?.type}}
+  </div>
+
+  <div *ngIf="content.tags">
+    <strong>Tags:</strong>
+
+    <div>
+      <span *ngFor="let tagItem of content.tags;" class="badge">
+        {{tagItem}}
+      </span>
+    </div>
   </div>
 </div>

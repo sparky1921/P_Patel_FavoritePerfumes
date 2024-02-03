@@ -1,1 +1,2 @@
-<p>content-list works!</p>
+<app-content-card *ngFor="let item of contentArray; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid yellow': '3px solid red'}" [content]="item" class="card-wrapper">
+</app-content-card>
