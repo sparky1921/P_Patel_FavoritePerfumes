@@ -6,12 +6,10 @@ describe('ContentListComponent', () => {
   let component: ContentListComponent;
   let fixture: ComponentFixture<ContentListComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ContentListComponent]
-    })
-    .compileComponents();
-    
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ContentListComponent]
+    });
     fixture = TestBed.createComponent(ContentListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

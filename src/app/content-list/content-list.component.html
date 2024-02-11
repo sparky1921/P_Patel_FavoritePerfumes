@@ -1,2 +1,34 @@
-<app-content-card *ngFor="let item of contentArray; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid yellow': '3px solid red'}" [content]="item" class="card-wrapper">
+<h1>My Favourite Perfumes</h1>
+
+<div>
+  <input type="text" [(ngModel)]="searchTitle" placeholder="Enter title for eg. Coco Perfume" size="40" />
+
+  <button (click)="searchContentByTitle()">Search</button>
+
+  <p [style.color]="isTitleFound ? 'green' : 'red'">
+    {{ searchMsg }}
+  </p>
+</div>
+
+<h2>Content item with NO Type</h2>
+
+<app-content-card *ngFor="let item of contentArray | filterContent: ''; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid black': '1px solid blue'}" [content]="item" class="card-wrapper">
+</app-content-card>
+
+
+<hr />
+
+
+<h2>Content item with Cluster Type</h2>
+
+<app-content-card *ngFor="let item of contentArray | filterContent: 'Cluster Fragnance'; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid black': '1px solid blue'}" [content]="item" class="card-wrapper">
+</app-content-card>
+
+
+<hr />
+
+
+<h2>Content item with Individual Type</h2>
+
+<app-content-card *ngFor="let item of contentArray | filterContent: 'Individual Fragnance'; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid black': '1px solid blue'}" [content]="item" class="card-wrapper">
 </app-content-card>
