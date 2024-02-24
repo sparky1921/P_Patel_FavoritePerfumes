@@ -15,11 +15,20 @@ export class ContentListComponent {
   constructor() {
     this.contentArray = [
       {
+        id: 0,
+        title: 'Black Coco Parfum',
+        description: 'The Coco now and forever fragrance. Sexy, fresh Oriental fragrance recalls the irrepressible spirit of the young Coco Chanel.. An elegant, luxurious spray closest in strength and character to the parfum form.',
+        creator: 'CHANEL',
+        imgURL: 'https://i.ebayimg.com/images/g/640AAOSwyc9jJeMh/s-l1200.webp',
+        type: '',
+        tags: ['Classic', 'Feminine']
+      },
+      {
         id: 1,
         title: 'Les Royales Jardin dAmalfi',
         description: 'British perfumery Creed, creator of fragrances beloved by Audrey Hepburn and Grace Kelly, introduced this Royal Exclusive scent in 2011 to celebrate the house\'s 250th anniversary.',
         creator: 'CREED',
-        imgURL: 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1696470800-1591136644-7ef2a988-17eb-4b12-9909-bcd8e382302d-651e170321a08.jpg?crop=1xw:1xh;center,top&resize=980:*',
+        // imgURL: 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1696470800-1591136644-7ef2a988-17eb-4b12-9909-bcd8e382302d-651e170321a08.jpg?crop=1xw:1xh;center,top&resize=980:*',
         type: 'Cluster Fragnance',
         tags: ['Premium', 'Expensive']
       },
@@ -64,17 +73,8 @@ export class ContentListComponent {
         title: 'N°5 Eau de Parfum',
         description: 'The now and forever fragrance. The ultimate in femininity. An elegant, luxurious spray closest in strength and character to the parfum form.',
         creator: 'CHANEL',
-        imgURL: 'https://i.ebayimg.com/images/g/640AAOSwyc9jJeMh/s-l1200.webp',
+        // imgURL: 'https://i.ebayimg.com/images/g/640AAOSwyc9jJeMh/s-l1200.webp',
         type: 'Individual Fragnance',
-        tags: ['Classic', 'Feminine']
-      },
-      {
-        id: 7,
-        title: 'Black Coco Parfum',
-        description: 'The Coco now and forever fragrance. Sexy, fresh Oriental fragrance recalls the irrepressible spirit of the young Coco Chanel.. An elegant, luxurious spray closest in strength and character to the parfum form.',
-        creator: 'CHANEL',
-        imgURL: 'https://i.ebayimg.com/images/g/640AAOSwyc9jJeMh/s-l1200.webp',
-        type: '',
         tags: ['Classic', 'Feminine']
       },
     ];

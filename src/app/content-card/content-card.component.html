@@ -1,9 +1,9 @@
 <div class="card" [ngClass]="('card-type-' + content.type)">
   <h1>{{content.title}}</h1>
 
-  <div *ngIf="content.imgURL">
+  <div>
       <strong>Image:</strong>
-      <img src="{{content.imgURL}}" width="150" height="150" (click)="handleClick(content)" alt="{{content.title}}" />
+      <img [src]="content.imgURL || 'assets/images/default.jpg'" width="150" height="150" (click)="handleClick(content)" alt="{{content.title}}" />
   </div>
 
 
@@ -19,14 +19,16 @@
 
   <div *ngIf="content.type">
       <strong>Type:</strong>
-      {{content.type}}
+      <span [appHoverAffect]="'text-decoration'">
+          {{content.type}}
+      </span>
   </div>
 
   <div *ngIf="content.tags">
       <strong>Tags:</strong>
 
       <div>
-          <span *ngFor="let tagItem of content.tags;" class="badge">
+          <span *ngFor="let tagItem of content.tags;" class="badge" [appHoverAffect]="'font-weight'">
               {{tagItem}}
           </span>
       </div>
