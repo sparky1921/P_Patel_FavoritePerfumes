@@ -91,4 +91,12 @@ searchContentByTitle() {
     ? `Content with title '${this.searchTitle}' exists.`
     : `Content with title '${this.searchTitle}' does not exist.`;
 }
+
+handleContentSubmission(newContent: Content) {
+    newContent.id = Number(newContent.id);
+    this.contentArray = [...this.contentArray, newContent];
+
+    console.log(this.contentArray)
+    console.log("Success! New content added: ", newContent.title)
+  }
 }
