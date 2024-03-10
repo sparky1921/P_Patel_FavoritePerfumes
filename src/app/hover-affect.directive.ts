@@ -1,36 +1,37 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { Directive, HostListener, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appHoverAffect]'
+  selector: '[appHoverAffect]',
+  standalone: true
 })
 export class HoverAffectDirective {
-  @Input('appHoverAffect') cssProp!: string;
+  @HostBinding('style.textDecoration')
+  textDecoration!: string;
+  @HostBinding('style.fontWeight')
+  fontWeight!: string;
+  @Input()
+  typeStyle!: 'textDecoration';
+  @Input()
+  tagStyle!: 'fontWeight';
 
+  constructor() { }
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
-
-   @HostListener('mouseenter') onMouseEnter() {
-    this.applyCssProp(this.cssProp, true);
-
+  @HostListener('mouseenter') onMouseEnter() {
+    if (this.typeStyle) {
+      this.textDecoration = 'underline';
+    }
+    if (this.tagStyle) {
+      this.fontWeight = 'bold';
+    }
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.applyCssProp(this.cssProp, false);
-
-  }
-
-  private applyCssProp(property: string, value: boolean) {
-    this.renderer.setStyle(this.elementRef.nativeElement, property, value ? this.findStyleVal(property) : null);
-  }
-
-  private findStyleVal(property: string): string {
-    switch (property) {
-      case 'text-decoration':
-        return 'underline';
-      case 'font-weight':
-        return 'bold';
-      default:
-        return '';
+    if (this.typeStyle) {
+      this.textDecoration = '';
+    }
+    if (this.tagStyle) {
+      this.fontWeight = 'normal';
     }
   }
+
 }

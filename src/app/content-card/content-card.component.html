@@ -1,36 +1,24 @@
-<div class="card" [ngClass]="('card-type-' + content.type)">
-  <h1>{{content.title}}</h1>
 
-  <div>
-      <strong>Image:</strong>
-      <img [src]="content.imgURL || 'assets/images/default.jpg'" width="150" height="150" (click)="handleClick(content)" alt="{{content.title}}" />
-  </div>
+<div class="card">
+  <h3 class="heading">{{ content.title }}</h3>
 
+  <img class="img" *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" (click)="showDetails()" />
 
-  <div>
-      <strong>Description:</strong>
-      {{content.description}}
-  </div>
+  <ng-template #defaultImage>
+    <img class="default-img" src="assets/images/default.jpg" (click)="showDetails()" />
+  </ng-template>
 
-  <div>
-      <strong>Creator:</strong>
-      {{content.creator}}
-  </div>
+  <div class="container">
+    <p>Description: {{ content.description }}</p>
 
-  <div *ngIf="content.type">
-      <strong>Type:</strong>
-      <span [appHoverAffect]="'text-decoration'">
-          {{content.type}}
-      </span>
-  </div>
+    <p>Creator: {{ content.creator }}</p>
 
-  <div *ngIf="content.tags">
-      <strong>Tags:</strong>
+    <p appHoverAffect typeStyle="textDecoration">Type: {{ content.type }}</p>
 
-      <div>
-          <span *ngFor="let tagItem of content.tags;" class="badge" [appHoverAffect]="'font-weight'">
-              {{tagItem}}
-          </span>
-      </div>
+    <div>Tags:
+      <p class="list" *ngFor="let tag of content.tags" appHoverAffect tagStyle="fontWeight">
+        {{tag}}
+      </p>
+    </div>
   </div>
 </div>

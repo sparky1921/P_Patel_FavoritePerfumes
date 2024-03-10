@@ -6,10 +6,12 @@ describe('ContentCardComponent', () => {
   let component: ContentCardComponent;
   let fixture: ComponentFixture<ContentCardComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ContentCardComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ContentCardComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(ContentCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -5,3 +5,32 @@
   width: 100%;
   box-shadow: 2px 2px black 0.5;
 }
+h2 {
+  text-align: center;
+  font-size: 2.2em;
+}
+
+.container {
+  margin: 0 20%;
+}
+
+div {
+  margin: 0 0 60px 0;
+}
+
+.input {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.message {
+  text-align: center;
+}
+
+.card-none {
+  border: 3px solid black;
+}
+
+.card {
+  border: 0px 10px 12px black;
+}

@@ -1,34 +1,32 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 90%;
-  padding: 20px;
-  background: rgb(1, 39, 39);
-  color: #000;
+  margin: 40px 0;
+  border-radius: 100px rgb(173, 0, 0);
 }
 
-.card > div {
-  display: flex;
-  gap: 15px;
-}
-
-.card img {
+.img {
+  max-width: 20%;
+  display: block;
+  margin: 0 auto;
   cursor: pointer;
 }
 
-.badge {
-  display: inline-block;
-  margin: 0 5px 5px 0;
-  padding: 5px 10px;
-  background-color: rgb(24, 94, 21);
-  border-radius: 9999px;
+.default-img {
+  max-width: 30%;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
-.card-type-Human {
-  background-color: rgb(87, 10, 21);
+.heading {
+  text-align: center;
+  font-size: 2em;
 }
 
-.card-type-God {
-  background-color: rgb(175, 96, 0);
+.container {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.list {
+  list-style-type: disc;
 }
