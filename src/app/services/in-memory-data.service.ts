@@ -1,5 +1,16 @@
-import {Content} from './content-interface';
-export const contentArray: Content[] = [
+import { Injectable } from '@angular/core';
+import { InMemoryDbService } from "angular-in-memory-web-api";
+import { Content } from '../helper-files/content-interface';
+import { contentArray } from '../helper-files/contentDb';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class InMemoryDataService implements InMemoryDbService{
+
+  createDb(){
+    //setting it to the value of our array of content
+    const content = [
   {
     id: 0,
     title: 'Chanel No. 5',
@@ -23,7 +34,7 @@ export const contentArray: Content[] = [
     title: 'Gucci Bloom',
     description: 'A luxurious and romantic floral fragrance.',
     creator: 'Gucci',
-    // imgURL: 'assets/images/gucci_bloom.jpeg',
+    imgURL: 'assets/images/gucci_bloom.jpeg',
     type: 'Eau de Parfum',
     tags: ['jasmine', 'tuberose', 'orris'],
   },
@@ -59,8 +70,18 @@ export const contentArray: Content[] = [
     title: 'Marc Jacobs Daisy',
     description: 'A youthful and fresh floral fragrance.',
     creator: 'Marc Jacobs',
-    // imgURL: 'assets/images/marc_jacobs_daisy.jpeg',
+    imgURL: 'assets/images/marc_jacobs_daisy.jpeg',
     type: 'Eau de Toilette',
     tags: ['strawberry', 'violet', 'jasmine'],
   },
-  ];
+];
+    return {content};
+  }
+
+  //take the CONTENT we defined in our contentDb file previously and move the values to this service
+  genId(content: Content[]): number{
+    return content.length > 0 ? Math.max(...content.map(c => c.id ?? 0)) + 1 : 1;
+  }
+
+  constructor() { }
+}

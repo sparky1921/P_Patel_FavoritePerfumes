@@ -7,18 +7,19 @@ import { MessageService } from './message.service';
 @Injectable({
   providedIn: 'root'
 })
-export class Sportservice {
+export class Perfumeservices {
 
   constructor(private messageService: MessageService) { }
 
   getContentArray(): Observable<Content[]> {
-     this.messageService.add('Content array loaded!');
-     return of(contentArray);
+    this.messageService.add('Content array loaded!');
+    return of(contentArray);
   }
 
-    getContentById(id: number): Observable<Content | undefined> {
+
+  getContentById(id: number): Observable<Content | undefined> {
     const content =(contentArray.find(content => content.id === id));
-    this.messageService.add(`Content Item at id: ${id}`);
+    this.messageService.add(``);
     return of(content);
   }
 }

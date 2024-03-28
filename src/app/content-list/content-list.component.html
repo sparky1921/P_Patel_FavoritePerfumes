@@ -1,28 +1,29 @@
-<div>
-</div>
-<div *ngIf="searchedContent">
-  <app-content-card [content]="searchedContent" class="card" id="card"></app-content-card>
-</div>
-<form (submit)="searchContentByTitle()">
-  <input type="text" [(ngModel)]="title" name="title" placeholder="Enter title to search" required>
-  <button type="submit">Search</button>
-</form>
-<p>{{ message }}</p>
+<app-modify-content-component (contentAdded)="onContentAdded($event)"></app-modify-content-component>
 
 
-<div class="container">
-  <h2>No Type</h2>
-  <div class="card-none">
-    <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
+  <div class="input">
+    <input type="text" name="title" [(ngModel)]="title">
+    <!-- [(ngModel)]="title" -->
+    <button (click)="checkTitle()">Submit</button>
   </div>
 
-  <h2>Cluster Type</h2>
-  <div class="card-none">
-    <app-content-card *ngFor="let item of contentArray | filterType:'Cluster Type'" [content]="item"></app-content-card>
-  </div>
+  <p class="message" [style.color]="isFound ? 'green' : 'red'">
+    {{ message }}
+  </p>
 
-  <h2>Individual Type</h2>
-  <div class="card-none">
-    <app-content-card *ngFor="let item of contentArray | filterType:'Individual Type'"
-      [content]="item"></app-content-card>
-  </div>
+  <div class="container">
+    <h2>No Type</h2>
+    <div class="card-none">
+      <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
+    </div>
+
+    <h2>Cluster Type</h2>
+    <div class="card-none">
+      <app-content-card *ngFor="let item of contentArray | filterType:'Cluster Type'" [content]="item"></app-content-card>
+    </div>
+
+    <h2>Individual Type</h2>
+    <div class="card-none">
+      <app-content-card *ngFor="let item of contentArray | filterType:'Individual Type'"
+        [content]="item"></app-content-card>
+    </div>
