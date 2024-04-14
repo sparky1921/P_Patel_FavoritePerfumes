@@ -1,3 +1,29 @@
-<h1>{{ title }}</h1>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<button class="menu" mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon color="accent">menu</mat-icon>
+
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>No Type</button>
+  <button mat-menu-item>Fragnance Perfumes</button>
+  <button mat-menu-item>Cluster Perfumes</button>
+</mat-menu>
+
+<div class="title">
+  <h1 class="primary-500">
+    {{ title }}
+  </h1>
+</div>
+
+<div class="routes">
+  <a routerLink="/content" routerLinkActive="active">Content List</a>
+  <a routerLink="/content/1" routerLinkActive="active">Floral</a>
+  <a routerLink="/pagewillnotbefound" routerLinkActive="active">Invalid page link</a>
+</div>
+
+<router-outlet></router-outlet>
+
+
 <app-messages></app-messages>
 <app-content-list></app-content-list>

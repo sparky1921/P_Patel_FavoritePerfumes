@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { ContentListComponent } from './content-list/content-list.component';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
-const routes: Routes = [];
+// sets up routes constant where you define your routes
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/content', pathMatch: 'full' },
+  { path: 'content', component: ContentListComponent },
+  { path: 'content/:id', component: ContentDetailComponent },
+  { path: '**', component: NotFoundComponent }
+];
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export {appRoutes};

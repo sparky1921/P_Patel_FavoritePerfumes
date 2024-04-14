@@ -1,0 +1,13 @@
+<div *ngIf="content">
+  <div style="padding-bottom:20px;">
+    <img [src]="content.imgURL" alt="{{content.title}}" style="height:250px">
+    <div class="content-desc">{{content.description}}</div>
+    <div class="content-desc">Creator: {{content.creator}}</div>
+    <div class="content-desc">Type: {{content.type}}</div>
+    <div class="content-desc">Tags:
+      <ng-container *ngFor="let tag of content.tags">
+        {{tag}},
+      </ng-container>
+    </div>
+  </div>
+</div>

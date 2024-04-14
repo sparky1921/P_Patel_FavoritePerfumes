@@ -1,24 +1,21 @@
-
-<div class="card">
-  <h3 class="heading">{{ content.title }}</h3>
-
-  <img class="img" *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" (click)="showDetails()" />
-
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ content.title }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" (click)="showDetails()" />
   <ng-template #defaultImage>
-    <img class="default-img" src="assets/images/default.jpg" (click)="showDetails()" />
+    <img mat-card-image src="assets/images/default.jpg" (click)="showDetails()" />
   </ng-template>
-
-  <div class="container">
-    <p>Description: {{ content.description }}</p>
-
+  <mat-card-content>
+    <!-- <p>Description: {{ content.description }}</p> -->
+    <a [routerLink]="['/content',content.id]" routerLinkActive="active">
+      Content Details
+    </a>
     <p>Creator: {{ content.creator }}</p>
-
-    <p appHoverAffect typeStyle="textDecoration">Type: {{ content.type }}</p>
-
+    <p>Type: {{ content.type }}</p>
     <div>Tags:
-      <p class="list" *ngFor="let tag of content.tags" appHoverAffect tagStyle="fontWeight">
-        {{tag}}
-      </p>
+      <span class="tag" *ngFor="let tag of content.tags">{{tag}}</span>
     </div>
-  </div>
-</div>
+
+  </mat-card-content>
+</mat-card>

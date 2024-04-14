@@ -1,0 +1,45 @@
+<div class="dialog">
+  <h3 class="accent-500">Add Perfume</h3>
+
+  <form (ngSubmit)="addContentToList(newContent)">
+    <div>
+      <label class="accent-500" for="title">Title:</label>
+      <mat-form-field appearance="fill">
+        <input matInput type="text" id="title" name="title" [(ngModel)]="newContent.title" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <label class="accent-500" for="description">Description:</label>
+      <mat-form-field appearance="fill">
+        <textarea matInput id="description" name="description" [(ngModel)]="newContent.description" required></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <label class="accent-500" for="creator">Creator:</label>
+      <mat-form-field appearance="fill">
+        <input matInput type="text" id="creator" name="creator" [(ngModel)]="newContent.creator" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <label class="accent-500" for="type">Type:</label>
+      <mat-form-field appearance="fill">
+        <input matInput type="text" id="type" name="type" [(ngModel)]="newContent.type" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <label class="accent-500" for="tags">Tags:</label>
+      <mat-form-field appearance="fill">
+        <input matInput type="text" id="tags" name="tags" [(ngModel)]="newContent.tags" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <label class="accent-500" for="imgURL">Image URL:</label>
+      <mat-form-field appearance="fill">
+        <input matInput type="text" id="imgURL" name="imgURL" [(ngModel)]="newContent.imgURL" required>
+      </mat-form-field>
+    </div>
+
+    <button custom-background class="cancel-button" mat-button (click)="closeDialog()" color="primary">Cancel</button>
+    <button custom-background class="submit-button" mat-button color="primary" type="submit">Add Content</button>
+  </form>
+</div>

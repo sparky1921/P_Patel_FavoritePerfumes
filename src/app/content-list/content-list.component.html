@@ -1,29 +1,32 @@
 <app-modify-content-component (contentAdded)="onContentAdded($event)"></app-modify-content-component>
 
+<h2 class="primary-500">Search Title</h2>
+<div class="input">
+  <mat-form-field appearance="fill">
+    <mat-icon color="primary">search</mat-icon>
+    <input matInput type="text" name="title" [(ngModel)]="title">
+  </mat-form-field>
+  <!-- [(ngModel)]="title" -->
+  <button colour="primary" (click)="checkTitle()">Submit</button>
+</div>
 
-  <div class="input">
-    <input type="text" name="title" [(ngModel)]="title">
-    <!-- [(ngModel)]="title" -->
-    <button (click)="checkTitle()">Submit</button>
+<p class="message" [style.color]="isFound ? 'green' : 'red'">
+  {{ message }}
+</p>
+
+<div class="container">
+  <div class="card-none">
+    <h2>No Type</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
   </div>
 
-  <p class="message" [style.color]="isFound ? 'green' : 'red'">
-    {{ message }}
-  </p>
-
-  <div class="container">
-    <h2>No Type</h2>
-    <div class="card-none">
-      <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
-    </div>
-
+  <div class="card-drama">
     <h2>Cluster Type</h2>
-    <div class="card-none">
-      <app-content-card *ngFor="let item of contentArray | filterType:'Cluster Type'" [content]="item"></app-content-card>
-    </div>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Cluster Type'" [content]="item"></app-content-card>
+  </div>
 
+  <div class="card-horror">
     <h2>Individual Type</h2>
-    <div class="card-none">
-      <app-content-card *ngFor="let item of contentArray | filterType:'Individual Type'"
-        [content]="item"></app-content-card>
-    </div>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Individual Type'"
+      [content]="item"></app-content-card>
+  </div>
